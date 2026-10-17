@@ -3,6 +3,7 @@ import {
   ArrowUpRight,
   Braces,
   Check,
+  Code2,
   Database,
   FileSpreadsheet,
   Server,
@@ -49,6 +50,19 @@ const capabilities = [
     description:
       "Practical data layers using MySQL and Prisma, shaped around the product.",
   },
+];
+
+const projectPipeline = ["Parse", "Detect", "Normalize", "Map", "Validate", "Export"];
+
+const projectStack = [
+  "Next.js 16",
+  "React 19",
+  "TypeScript",
+  "Node.js",
+  "Python",
+  "ExcelJS",
+  "SheetJS",
+  "openpyxl",
 ];
 
 export default function Home() {
@@ -199,44 +213,90 @@ export default function Home() {
           </div>
 
           <Card className="mt-12 overflow-hidden border-white/10 bg-[#0a100e]">
-            <CardContent className="grid gap-0 p-0 lg:grid-cols-[0.9fr_1.1fr]">
+            <CardContent className="grid gap-0 p-0 lg:grid-cols-[0.95fr_1.05fr]">
               <div className="flex flex-col justify-between p-7 sm:p-10 lg:p-12">
                 <div>
-                  <div className="flex items-center gap-3"><span className="grid size-11 place-items-center rounded-xl bg-emerald-300/10 text-emerald-300"><FileSpreadsheet /></span><Badge>Full-stack project</Badge></div>
-                  <h3 className="mt-10 text-4xl font-semibold tracking-[-0.05em] sm:text-6xl">excel-<span className="text-zinc-500">converter</span></h3>
-                  <p className="mt-6 max-w-md leading-7 text-zinc-400">A full-stack project centered on Excel conversion—designed to turn a repetitive file workflow into a clear, approachable experience.</p>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="grid size-11 place-items-center rounded-xl bg-emerald-300/10 text-emerald-300"><FileSpreadsheet /></span>
+                    <Badge>Full-stack platform</Badge>
+                    <Badge variant="outline">In development</Badge>
+                  </div>
+                  <h3 className="mt-9 max-w-xl text-3xl font-semibold tracking-[-0.045em] sm:text-5xl">
+                    Excel Data <span className="text-zinc-500">Standardization &amp; Validation</span> Platform
+                  </h3>
+                  <p className="mt-6 max-w-xl leading-7 text-zinc-400">
+                    A full-stack platform that transforms heterogeneous asset spreadsheets into organization-standard Excel workbooks. It detects worksheet structures, normalizes data, supports automatic and manual column mapping, validates data quality, and allows corrections before export.
+                  </p>
+
+                  <ul className="mt-7 space-y-3">
+                    {[
+                      "Automatic worksheet detection and safe column mapping",
+                      "In-app data correction without changing the source file",
+                      "Versioned Excel templates with rollback support",
+                    ].map((feature) => (
+                      <li key={feature} className="flex items-start gap-3 text-sm leading-6 text-zinc-400">
+                        <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-emerald-300/10 text-emerald-300"><Check className="size-3" /></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="mt-12 flex flex-wrap gap-2">
-                  {["Next.js", "TypeScript", "Tailwind CSS", "Full stack"].map((item) => <Badge key={item} variant="outline">{item}</Badge>)}
+
+                <div className="mt-10">
+                  <div className="flex flex-wrap gap-2">
+                    {projectStack.map((item) => <Badge key={item} variant="outline">{item}</Badge>)}
+                  </div>
+                  <Button className="mt-7" variant="outline" asChild>
+                    <a href="https://github.com/pgplagrob/excel-converter" target="_blank" rel="noopener noreferrer">
+                      <Code2 /> View source on GitHub <ArrowUpRight />
+                    </a>
+                  </Button>
                 </div>
               </div>
 
-              <div className="relative min-h-[25rem] overflow-hidden border-t border-white/8 bg-[#07110d] p-5 sm:p-8 lg:min-h-[34rem] lg:border-l lg:border-t-0">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(52,211,153,0.16),transparent_34%)]" />
-                <div className="relative mx-auto mt-4 max-w-xl rotate-[1.25deg] rounded-2xl border border-white/10 bg-[#0d1512] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.45)] transition-transform duration-500 hover:rotate-0 sm:mt-8">
-                  <div className="flex items-center justify-between rounded-xl border border-white/8 bg-black/20 px-4 py-3">
-                    <div className="flex items-center gap-2"><span className="grid size-7 place-items-center rounded-md bg-emerald-300/10"><FileSpreadsheet className="size-4 text-emerald-300" /></span><span className="text-xs font-medium text-zinc-300">excel-converter</span></div>
-                    <span className="rounded-full bg-emerald-300/10 px-2 py-1 font-mono text-[9px] text-emerald-300">READY</span>
-                  </div>
-
-                  <div className="mt-3 grid gap-3 sm:grid-cols-[1.15fr_0.85fr]">
-                    <div className="rounded-xl border border-dashed border-emerald-300/25 bg-emerald-300/[0.035] p-5">
-                      <div className="grid min-h-36 place-items-center text-center"><div><FileSpreadsheet className="mx-auto size-9 text-emerald-300" /><p className="mt-4 text-sm font-medium">Drop your Excel file</p><p className="mt-1 text-xs text-zinc-600">or choose from your device</p></div></div>
-                    </div>
-                    <div className="rounded-xl border border-white/8 bg-white/[0.025] p-4">
-                      <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-600">Workflow</p>
-                      <div className="mt-5 space-y-4">
-                        {["Upload file", "Convert data", "Get output"].map((step, index) => (
-                          <div key={step} className="flex items-center gap-3"><span className="grid size-6 place-items-center rounded-full bg-emerald-300/10 text-emerald-300">{index === 0 ? <Check className="size-3" /> : <span className="size-1.5 rounded-full bg-zinc-600" />}</span><span className="text-xs text-zinc-400">{step}</span></div>
-                        ))}
+              <div className="relative min-h-[32rem] overflow-hidden border-t border-white/8 bg-[#07110d] p-5 sm:p-8 lg:min-h-[42rem] lg:border-l lg:border-t-0">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(52,211,153,0.16),transparent_34%)]" />
+                <div className="relative mx-auto flex h-full max-w-xl flex-col justify-center gap-4">
+                  <div className="rounded-2xl border border-white/10 bg-[#0d1512] p-5 shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:p-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span className="grid size-8 place-items-center rounded-lg bg-emerald-300/10"><FileSpreadsheet className="size-4 text-emerald-300" /></span>
+                        <div><p className="text-xs font-medium text-zinc-300">Data pipeline</p><p className="font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-600">excel-converter</p></div>
                       </div>
+                      <span className="rounded-full bg-emerald-300/10 px-2.5 py-1 font-mono text-[9px] text-emerald-300">VALIDATED</span>
+                    </div>
+
+                    <div className="mt-7 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                      {projectPipeline.map((step, index) => (
+                        <div key={step} className="relative rounded-xl border border-white/8 bg-black/20 p-3.5">
+                          <p className="font-mono text-[9px] text-emerald-300/60">0{index + 1}</p>
+                          <p className="mt-3 text-xs font-medium text-zinc-300">{step}</p>
+                          {index < projectPipeline.length - 1 ? <span className="absolute -right-1.5 top-1/2 hidden size-3 -translate-y-1/2 rotate-45 border-r border-t border-emerald-300/30 bg-[#0d1512] sm:block" /> : null}
+                        </div>
+                      ))}
                     </div>
                   </div>
 
-                  <div className="mt-3 grid grid-cols-3 gap-3">
-                    {[["Rows", "2,480"], ["Sheets", "04"], ["Status", "Clean"]].map(([label, value]) => (
-                      <div key={label} className="rounded-xl border border-white/8 bg-black/20 p-3"><p className="font-mono text-[8px] uppercase text-zinc-600">{label}</p><p className="mt-2 text-sm font-semibold text-zinc-300">{value}</p></div>
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      ["67", "Tests passing"],
+                      ["2", "Excel formats"],
+                      ["5", "Template versions"],
+                    ].map(([value, label]) => (
+                      <div key={label} className="rounded-2xl border border-white/8 bg-white/[0.025] p-4 sm:p-5">
+                        <p className="text-2xl font-semibold text-emerald-200 sm:text-3xl">{value}</p>
+                        <p className="mt-2 text-[10px] leading-4 text-zinc-500 sm:text-xs">{label}</p>
+                      </div>
                     ))}
+                  </div>
+
+                  <div className="rounded-2xl border border-white/8 bg-black/20 p-5">
+                    <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-600">Validation coverage</p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {["Required fields", "Dates", "Numbers", "Status", "Duplicates"].map((item) => (
+                        <span key={item} className="flex items-center gap-1.5 rounded-full bg-white/[0.04] px-3 py-1.5 text-[10px] text-zinc-400"><Check className="size-3 text-emerald-300" />{item}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
