@@ -1,4 +1,4 @@
-# Hi, I'm Weraphat Pankab 👋
+# Hi, I'm Weraphat Pankab 
 
 I'm a **Full-stack Developer** who enjoys turning ideas into useful, dependable web products. I work across the entire stack—from polished user interfaces to backend services and practical data systems.
 
