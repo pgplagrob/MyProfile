@@ -18,7 +18,7 @@ export function SiteHeader() {
     <header className="relative z-50 mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-6 sm:px-8 lg:px-10">
       <a href="#top" aria-label="Weraphat Pankab — back to top" className="group flex items-center gap-3">
         <span className="leading-tight">
-          <span className="block text-sm font-semibold text-white">Weraphat Pankab</span>
+          <span className="block text-sm font-serif text-white">Weraphat Pankab</span>
           <span className="block text-[10px] uppercase tracking-[0.22em] text-zinc-500">Full-stack developer</span>
         </span>
       </a>
