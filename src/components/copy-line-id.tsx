@@ -1,0 +1,49 @@
+"use client";
+
+import { useState } from "react";
+import { Check, Copy, MessageCircle } from "lucide-react";
+
+const lineId = "weraphat2003";
+
+export function CopyLineId() {
+  const [copyState, setCopyState] = useState<"idle" | "copied" | "failed">("idle");
+
+  async function copyId() {
+    try {
+      await navigator.clipboard.writeText(lineId);
+      setCopyState("copied");
+    } catch {
+      setCopyState("failed");
+    }
+  }
+
+  return (
+    <div>
+      <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#0a100e]/70 p-4 sm:gap-4 sm:p-5">
+        <span className="hidden size-11 shrink-0 place-items-center rounded-xl bg-cyan-300/10 text-cyan-200 min-[360px]:grid">
+          <MessageCircle className="size-5" />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-xs text-zinc-400">LINE ID</span>
+          <span className="block break-all font-medium text-white">{lineId}</span>
+        </span>
+        <button
+          type="button"
+          onClick={copyId}
+          className="flex min-h-11 shrink-0 items-center gap-2 rounded-full px-2 text-xs text-cyan-200 transition-colors hover:bg-cyan-300/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+          aria-label={`Copy LINE ID ${lineId}`}
+        >
+          {copyState === "copied" ? <Check className="size-4" /> : <Copy className="size-4" />}
+          <span className={copyState === "idle" ? "hidden sm:inline" : ""}>
+            {copyState === "copied" ? "Copied" : "Copy"}
+          </span>
+        </button>
+      </div>
+      {copyState === "failed" ? (
+        <p className="mt-2 text-xs text-amber-200" role="status">
+          Copy unavailable. Select the LINE ID above to copy it manually.
+        </p>
+      ) : null}
+    </div>
+  );
+}
