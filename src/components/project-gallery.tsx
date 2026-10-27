@@ -48,7 +48,6 @@ const screens = [
     width: 1600,
     height: 1000,
     title: "ตั้งค่าเทมเพลต",
-    eyebrow: "ตั้งค่า / เทมเพลต",
   },
 ] as const;
 
@@ -90,15 +89,15 @@ export function ProjectGallery() {
       <section className="min-w-0 border-t border-white/8 bg-black/20 p-4 sm:p-8 lg:p-10">
         <div className="mb-5 flex min-w-0 flex-col items-start justify-between gap-4 sm:flex-row sm:items-end sm:gap-5">
           <div className="min-w-0">
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-300/70">
+            {/* <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-300/70">
               Excel Converter
-            </p>
+            </p> */}
             <h4 className="mt-2 text-xl font-semibold tracking-[-0.03em] text-zinc-100 sm:text-2xl">
-              ลองดูหน้าจอของระบบ
+              หน้าจอของระบบ
             </h4>
-            <p className="mt-2 text-sm text-zinc-500">
+            {/* <p className="mt-2 text-sm text-zinc-500">
               เลื่อนดูหน้าจออื่นได้ครับ แตะที่ภาพเพื่อดูขนาดใหญ่ขึ้น
-            </p>
+            </p> */}
           </div>
 
           <div className="flex shrink-0 gap-2">
@@ -137,14 +136,12 @@ export function ProjectGallery() {
             >
               <div className="flex min-w-0 items-center justify-between gap-3 border-b border-white/8 px-3 py-2.5 sm:px-4 sm:py-3">
                 <div className="flex items-center gap-2.5">
-                  <span className="size-2 rounded-full bg-emerald-300 shadow-[0_0_14px_rgba(110,231,183,0.7)]" />
+                  {/* <span className="size-2 rounded-full bg-emerald-300 shadow-[0_0_14px_rgba(110,231,183,0.7)]" /> */}
                   <div className="min-w-0">
                     <p className="truncate text-sm font-medium text-zinc-200">
                       {screen.title}
                     </p>
-                    <p className="font-mono text-[8px] uppercase tracking-[0.18em] text-zinc-600">
-                      {screen.eyebrow}
-                    </p>
+
                   </div>
                 </div>
                 <Expand className="size-4 text-zinc-600 transition-colors group-hover:text-emerald-300" />
@@ -169,10 +166,10 @@ export function ProjectGallery() {
           ))}
         </div>
 
-        <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-600">
+        {/* <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-600">
           <span>เลื่อนดูหน้าจอเพิ่มเติม</span>
           <span>ทั้งหมด 6 หน้าจอ</span>
-        </div>
+        </div> */}
       </section>
 
       {activePreview
