@@ -340,9 +340,9 @@ export default function Home() {
           </div>
 
           <Card className="mt-8 overflow-hidden border-white/10 bg-[#0a100e] sm:mt-12">
-            <CardContent className="grid gap-0 p-0 lg:grid-cols-[0.95fr_1.05fr]">
-              <div className="flex flex-col justify-between p-5 sm:p-10 lg:p-12">
-                <div>
+            <CardContent className="grid min-w-0 gap-0 p-0 lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="flex min-w-0 flex-col justify-between p-5 sm:p-10 lg:p-12">
+                <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="grid size-11 place-items-center rounded-xl bg-emerald-300/10 text-emerald-300">
                       <FileSpreadsheet />
@@ -350,7 +350,7 @@ export default function Home() {
                     <Badge>Full-stack platform</Badge>
                     <Badge variant="outline">In development</Badge>
                   </div>
-                  <h3 className="mt-7 max-w-xl text-2xl font-semibold leading-tight tracking-[-0.045em] sm:mt-9 sm:text-5xl">
+                  <h3 className="mt-7 max-w-xl break-words text-[1.75rem] font-semibold leading-[1.05] tracking-[-0.045em] sm:mt-9 sm:text-5xl">
                     Excel Data{" "}
                     <span className="text-zinc-500">
                       Standardization &amp; Validation
@@ -403,10 +403,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="relative overflow-hidden border-t border-white/8 bg-[#07110d] p-4 sm:p-8 lg:min-h-[42rem] lg:border-l lg:border-t-0">
+              <div className="relative min-w-0 overflow-hidden border-t border-white/8 bg-[#07110d] p-4 sm:p-8 lg:min-h-[42rem] lg:border-l lg:border-t-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(52,211,153,0.16),transparent_34%)]" />
-                <div className="relative mx-auto flex h-full max-w-xl flex-col justify-center gap-4">
-                  <div className="rounded-2xl border border-white/10 bg-[#0d1512] p-5 shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:p-6">
+                <div className="relative mx-auto flex h-full min-w-0 max-w-xl flex-col justify-center gap-4">
+                  <div className="min-w-0 rounded-2xl border border-white/10 bg-[#0d1512] p-4 shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:p-6">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <span className="grid size-8 place-items-center rounded-lg bg-emerald-300/10">
@@ -446,7 +446,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid min-w-0 grid-cols-3 gap-2 sm:gap-3">
                     {[
                       ["67", "Tests passing"],
                       ["2", "Excel formats"],
@@ -454,7 +454,7 @@ export default function Home() {
                     ].map(([value, label]) => (
                       <div
                         key={label}
-                        className="rounded-2xl border border-white/8 bg-white/[0.025] p-4 sm:p-5"
+                        className="min-w-0 rounded-xl border border-white/8 bg-white/[0.025] p-3 sm:rounded-2xl sm:p-5"
                       >
                         <p className="text-2xl font-semibold text-emerald-200 sm:text-3xl">
                           {value}
@@ -491,22 +491,22 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="lg:col-span-2">
+              <div className="min-w-0 overflow-hidden lg:col-span-2">
                 <ProjectGallery />
               </div>
             </CardContent>
           </Card>
 
           <Card className="mt-6 overflow-hidden border-white/10 bg-[#0a0f12]">
-            <CardContent className="grid gap-0 p-0 lg:grid-cols-[0.95fr_1.05fr]">
-              <div className="flex flex-col justify-between p-7 sm:p-10 lg:p-12">
+            <CardContent className="grid min-w-0 gap-0 p-0 lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="flex min-w-0 flex-col justify-between p-5 sm:p-10 lg:p-12">
                 <div>
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="grid size-11 place-items-center rounded-xl bg-cyan-300/10 text-cyan-300"><Building2 /></span>
                     <Badge>Operations ERP</Badge>
                     <Badge variant="outline">In development</Badge>
                   </div>
-                  <h3 className="mt-9 max-w-xl text-3xl font-semibold tracking-[-0.045em] sm:text-5xl">
+                  <h3 className="mt-8 max-w-xl break-words text-[1.75rem] font-semibold leading-[1.05] tracking-[-0.045em] sm:mt-9 sm:text-5xl">
                     Pocky ERP <span className="text-zinc-500">Workforce &amp; Contract Operations</span>
                   </h3>
                   <p className="mt-6 max-w-xl leading-7 text-zinc-400">
@@ -537,7 +537,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="relative min-h-[32rem] overflow-hidden border-t border-white/8 bg-[#071014] p-5 sm:p-8 lg:min-h-[42rem] lg:border-l lg:border-t-0">
+              <div className="relative min-h-[32rem] min-w-0 overflow-hidden border-t border-white/8 bg-[#071014] p-4 sm:p-8 lg:min-h-[42rem] lg:border-l lg:border-t-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(34,211,238,0.17),transparent_34%)]" />
                 <div className="relative mx-auto flex h-full max-w-xl flex-col justify-center gap-4">
                   <div className="rounded-2xl border border-white/10 bg-[#0b1418] p-5 shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:p-6">
