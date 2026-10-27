@@ -146,7 +146,6 @@ export default function Home() {
           </div>
 
           <p className="mb-3 font-serif text-sm text-cyan-200 sm:text-base">
-            สวัสดีครับ ผม Weraphat
           </p>
           <h1 className="max-w-4xl text-balance text-[clamp(3rem,8vw,7.8rem)] font-semibold leading-[0.92] tracking-normal sm:leading-[0.88]">
             Full-stack
@@ -238,17 +237,22 @@ export default function Home() {
       >
         <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <div>
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-cyan-300/80">
+              About
+            </p>
             <h2 className="text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">
-              I work across
-              <span className="block text-zinc-500">frontend and backend.</span>
+              พัฒนา Web App
+              <span className="mt-2 block text-zinc-500">
+                ตั้งแต่หน้าจอจนถึงระบบหลังบ้าน
+              </span>
             </h2>
           </div>
           <div className="lg:pt-10">
             <p className="max-w-2xl text-lg leading-8 text-zinc-300 sm:text-2xl sm:leading-10">
-              ผมชื่อ Weraphat ทำงานได้ตั้งแต่หน้าเว็บที่คนเห็น ไปจนถึง API และฐานข้อมูลที่อยู่ข้างหลัง
+              ผมทำงานได้ตั้งแต่หน้าจอที่คนใช้งาน ไปจนถึง API และฐานข้อมูล เพื่อให้ทุกส่วนทำงานต่อกันได้จริง
             </p>
             <p className="mt-6 max-w-xl leading-7 text-zinc-500">
-              เวลาทำเว็บ ผมอยากรู้ด้วยว่าข้อมูลมาจากไหนและถูกเอาไปใช้อย่างไร จะได้แก้ปัญหาได้ตรงจุด
+              ตอนนี้กำลังพัฒนาเครื่องมือจัดการไฟล์ Excel และระบบ ERP โดยให้ความสำคัญกับการเข้าใจข้อมูลและแก้ปัญหาจากการใช้งานจริง
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {capabilities.map((capability) => {
@@ -325,7 +329,7 @@ export default function Home() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">
-                โปรเจกต์ที่กำลังทำ
+                Projects
               </h2>
             </div>
             <Badge variant="outline" className="w-fit">
