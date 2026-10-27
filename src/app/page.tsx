@@ -44,33 +44,33 @@ const capabilities = [
   {
     icon: Braces,
     number: "01",
-    title: "Frontend systems",
+    title: "หน้าที่คนใช้งาน",
     description:
-      "Responsive interfaces built with React, Next.js, shadcn/ui and Tailwind CSS.",
+      "ทำหน้าเว็บให้ใช้งานง่ายและแสดงผลได้ดีทั้งบนมือถือและคอมพิวเตอร์",
   },
   {
     icon: Server,
     number: "02",
-    title: "Backend foundations",
+    title: "ระบบเบื้องหลัง",
     description:
-      "APIs and application logic powered by Node.js, Express and Bun.",
+      "เขียน API และ logic ให้ส่วนต่าง ๆ ของเว็บทำงานเข้ากัน",
   },
   {
     icon: Database,
     number: "03",
-    title: "Data that connects",
+    title: "ฐานข้อมูล",
     description:
-      "Practical data layers using MySQL and Prisma, shaped around the product.",
+      "จัดโครงสร้างข้อมูลด้วย MySQL และ Prisma ให้ตรงกับสิ่งที่ระบบต้องใช้",
   },
 ];
 
 const projectPipeline = [
-  "Parse",
-  "Detect",
-  "Normalize",
-  "Map",
-  "Validate",
-  "Export",
+  "อ่านไฟล์",
+  "ตรวจจับ",
+  "จัดรูปแบบ",
+  "จับคู่",
+  "ตรวจสอบ",
+  "ส่งออก",
 ];
 
 const projectStack = [
@@ -100,26 +100,26 @@ const erpModules = [
   {
     icon: UsersRound,
     code: "PEOPLE",
-    title: "Employee operations",
-    description: "Profiles, onboarding and workforce records",
+    title: "ข้อมูลพนักงาน",
+    description: "ประวัติพนักงาน การเริ่มงาน และข้อมูลทีม",
   },
   {
     icon: Clock3,
     code: "TIME",
-    title: "Attendance & coverage",
-    description: "Check-ins, absences and replacement staffing",
+    title: "เวลาเข้างานและกำลังคน",
+    description: "เช็กชื่อ การลา และจัดคนทำงานแทน",
   },
   {
     icon: Building2,
     code: "CONTRACTS",
-    title: "Client contracts",
-    description: "Organizations, branches and agreement tracking",
+    title: "สัญญาลูกค้า",
+    description: "จัดการองค์กร สาขา และติดตามข้อตกลง",
   },
   {
     icon: WalletCards,
     code: "PAYROLL",
-    title: "Payroll workflows",
-    description: "Daily or monthly payroll and payslip output",
+    title: "จัดการเงินเดือน",
+    description: "คำนวณเงินเดือนรายวันหรือรายเดือน พร้อมออกสลิป",
   },
 ];
 
@@ -141,33 +141,32 @@ export default function Home() {
               <span className="relative inline-flex size-2.5 rounded-full bg-cyan-300" />
             </span> */}
             {/* <span className="font-mono text-xs uppercase tracking-[0.24em] text-zinc-400">
-              Available for meaningful work
+              พร้อมรับฟังโอกาสและโปรเจกต์ที่น่าสนใจ
             </span> */}
           </div>
 
           <p className="mb-3 font-serif text-sm text-cyan-200 sm:text-base">
-            Hello, I&apos;m Weraphat Pankab
+            สวัสดีครับ ผม Weraphat
           </p>
-          <h1 className="max-w-4xl text-balance text-[clamp(3rem,8vw,7.8rem)] font-semibold leading-[0.92] tracking-[-0.07em] sm:leading-[0.88]">
+          <h1 className="max-w-4xl text-balance text-[clamp(3rem,8vw,7.8rem)] font-semibold leading-[0.92] tracking-normal sm:leading-[0.88]">
             Full-stack
-            <span className="block text-zinc-500">developer.</span>
+            <span className="block text-zinc-500">developer</span>
           </h1>
           <p className="mt-8 max-w-xl text-pretty text-base leading-7 text-zinc-400 sm:text-lg sm:leading-8">
-            I create thoughtful web products from polished interfaces to
-            dependable backend systems—turning ideas into software people can
-            actually use.
+            ผมทำเว็บด้วย Next.js, React และ Node.js ตอนนี้กำลังทำระบบจัดการไฟล์ Excel
+            กับระบบ ERP อยู่ ลองเลื่อนลงไปดูผลงานได้เลยครับ
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          {/* <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button size="lg" asChild>
               <a href="#work">
-                See my work <ArrowDownRight />
+                ดูโปรเจกต์ <ArrowDownRight />
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href="#stack">Explore my stack</a>
+              <a href="#stack">เครื่องมือที่ใช้</a>
             </Button>
-          </div>
+          </div> */}
         </div>
 
         <div className="group relative mx-auto mb-12 w-full max-w-[31rem] lg:mx-0 lg:mb-10 lg:justify-self-end">
@@ -175,7 +174,7 @@ export default function Home() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 bg-[#080b0b] shadow-[0_45px_120px_rgba(0,0,0,0.58)]">
             <Image
               src="/weraphat-portrait.jpg"
-              alt="Portrait of Weraphat Pankab"
+              alt="ภาพถ่ายของ Weraphat Pankab"
               width={758}
               height={1024}
               priority
@@ -189,7 +188,7 @@ export default function Home() {
               </span>
               <span className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-cyan-100/70">
                 <span className="size-1.5 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.9)]" />
-                Full-stack
+                นักพัฒนาเว็บ
               </span>
             </div>
           </div>
@@ -214,7 +213,7 @@ export default function Home() {
               </div>
               <div className="mb-1 flex items-center gap-1.5 text-zinc-500">
                 <Braces className="size-3.5 text-cyan-300" />
-                <span className="whitespace-nowrap">2 systems</span>
+                <span className="whitespace-nowrap">2 โปรเจกต์</span>
               </div>
             </div>
           </Card>
@@ -240,20 +239,16 @@ export default function Home() {
         <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <div>
             <h2 className="text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">
-              I solve the whole problem,
-              <span className="block text-zinc-500">not just one layer.</span>
+              I work across
+              <span className="block text-zinc-500">frontend and backend.</span>
             </h2>
           </div>
           <div className="lg:pt-10">
             <p className="max-w-2xl text-lg leading-8 text-zinc-300 sm:text-2xl sm:leading-10">
-              I&apos;m Weraphat, a full-stack developer who enjoys connecting
-              clean interfaces, solid application logic and practical data
-              systems.
+              ผมชื่อ Weraphat ทำงานได้ตั้งแต่หน้าเว็บที่คนเห็น ไปจนถึง API และฐานข้อมูลที่อยู่ข้างหลัง
             </p>
             <p className="mt-6 max-w-xl leading-7 text-zinc-500">
-              My toolkit spans the complete web stack, which helps me think
-              beyond individual screens and build experiences that stay coherent
-              from the first click to the database.
+              เวลาทำเว็บ ผมอยากรู้ด้วยว่าข้อมูลมาจากไหนและถูกเอาไปใช้อย่างไร จะได้แก้ปัญหาได้ตรงจุด
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {capabilities.map((capability) => {
@@ -290,13 +285,12 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-2 lg:items-end">
             <div>
               <h2 className="text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">
-                Tools I build with.
+                Teach Stack
               </h2>
             </div>
-            <p className="max-w-xl leading-7 text-zinc-500 lg:justify-self-end">
-              A modern JavaScript and TypeScript stack for building fast
-              interfaces, flexible APIs and maintainable data layers.
-            </p>
+            {/* <p className="max-w-xl leading-7 text-zinc-500 lg:justify-self-end">
+              หลัก ๆ ใช้ JavaScript กับ TypeScript และเลือกเครื่องมืออื่นตามลักษณะของแต่ละโปรเจกต์
+            </p> */}
           </div>
 
           <div className="mt-8 grid grid-cols-2 gap-2.5 sm:mt-14 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4">
@@ -315,7 +309,7 @@ export default function Home() {
             ))}
             <div className="hidden min-h-28 items-end rounded-2xl border border-dashed border-cyan-300/20 p-5 lg:flex">
               <span className="font-mono text-xs text-cyan-300/60">
-                always learning +
+                ยังมีอีกหลายอย่างให้ลอง +
               </span>
             </div>
           </div>
@@ -331,11 +325,11 @@ export default function Home() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">
-                Systems built for real operations.
+                โปรเจกต์ที่กำลังทำ
               </h2>
             </div>
             <Badge variant="outline" className="w-fit">
-              <Sparkles className="size-3 text-cyan-300" /> Selected projects
+              <Sparkles className="size-3 text-cyan-300" /> ดูรายละเอียด
             </Badge>
           </div>
 
@@ -347,28 +341,25 @@ export default function Home() {
                     <span className="grid size-11 place-items-center rounded-xl bg-emerald-300/10 text-emerald-300">
                       <FileSpreadsheet />
                     </span>
-                    <Badge>Full-stack platform</Badge>
-                    <Badge variant="outline">In development</Badge>
+                    <Badge>เครื่องมือจัดการไฟล์</Badge>
+                    <Badge variant="outline">กำลังทำอยู่</Badge>
                   </div>
                   <h3 className="mt-7 max-w-xl break-words text-[1.75rem] font-semibold leading-[1.05] tracking-[-0.045em] sm:mt-9 sm:text-5xl">
-                    Excel Data{" "}
+                    จัดไฟล์ Excel{" "}
                     <span className="text-zinc-500">
-                      Standardization &amp; Validation
-                    </span>{" "}
-                    Platform
+                      ให้เป็นแบบเดียวกัน
+                    </span>
                   </h3>
                   <p className="mt-6 max-w-xl leading-7 text-zinc-400">
-                    A platform that turns varied asset spreadsheets into
-                    organization-standard Excel workbooks. It detects sheet
-                    structures, maps columns, validates data, and lets users
-                    correct issues before export.
+                    ไฟล์ทะเบียนทรัพย์สินที่ได้มามักจัดคอลัมน์ไม่เหมือนกัน ผมเลยทำเครื่องมือที่อ่านไฟล์
+                    จับคู่ข้อมูลกับเทมเพลต แล้วให้ตรวจและแก้รายการก่อนดาวน์โหลดไฟล์ที่จัดเรียบร้อยแล้ว
                   </p>
 
                   <ul className="mt-7 space-y-3">
                     {[
-                      "Automatic worksheet detection and safe column mapping",
-                      "In-app data correction without changing the source file",
-                      "Versioned Excel templates with rollback support",
+                      "จับคู่คอลัมน์ให้อัตโนมัติ หรือเลือกจับคู่เอง",
+                      "แก้ข้อมูลก่อนส่งออก โดยไม่เปลี่ยนไฟล์ต้นฉบับ",
+                      "เก็บเทมเพลตเป็นเวอร์ชันและย้อนกลับได้",
                     ].map((feature) => (
                       <li
                         key={feature}
@@ -397,7 +388,7 @@ export default function Home() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Code2 /> View source on GitHub <ArrowUpRight />
+                      <Code2 /> ดูโค้ดใน GitHub <ArrowUpRight />
                     </a>
                   </Button>
                 </div>
@@ -414,7 +405,7 @@ export default function Home() {
                         </span>
                         <div>
                           <p className="text-xs font-medium text-zinc-300">
-                            Data pipeline
+                            ขั้นตอนในระบบ
                           </p>
                           <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-600">
                             excel-converter
@@ -422,7 +413,7 @@ export default function Home() {
                         </div>
                       </div>
                       <span className="rounded-full bg-emerald-300/10 px-2.5 py-1 font-mono text-[9px] text-emerald-300">
-                        VALIDATED
+                        ตรวจสอบแล้ว
                       </span>
                     </div>
 
@@ -446,11 +437,11 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="grid min-w-0 grid-cols-3 gap-2 sm:gap-3">
+                  {/* <div className="grid min-w-0 grid-cols-3 gap-2 sm:gap-3">
                     {[
-                      ["67", "Tests passing"],
-                      ["2", "Excel formats"],
-                      ["5", "Template versions"],
+                      ["67", "เทสต์ผ่าน"],
+                      ["2", "ชนิดไฟล์"],
+                      ["5", "เทมเพลต"],
                     ].map(([value, label]) => (
                       <div
                         key={label}
@@ -464,19 +455,19 @@ export default function Home() {
                         </p>
                       </div>
                     ))}
-                  </div>
+                  </div> */}
 
                   <div className="rounded-2xl border border-white/8 bg-black/20 p-5">
                     <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-600">
-                      Validation coverage
+                      เช็กข้อมูล
                     </p>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {[
-                        "Required fields",
-                        "Dates",
-                        "Numbers",
-                        "Status",
-                        "Duplicates",
+                        "ช่องที่จำเป็น",
+                        "วันที่",
+                        "ตัวเลข",
+                        "สถานะ",
+                        "ข้อมูลซ้ำ",
                       ].map((item) => (
                         <span
                           key={item}
@@ -503,21 +494,23 @@ export default function Home() {
                 <div>
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="grid size-11 place-items-center rounded-xl bg-cyan-300/10 text-cyan-300"><Building2 /></span>
-                    <Badge>Operations ERP</Badge>
-                    <Badge variant="outline">In development</Badge>
+                    <Badge>ระบบจัดการงานและพนักงาน</Badge>
+                    <Badge variant="outline">กำลังทำอยู่</Badge>
                   </div>
                   <h3 className="mt-8 max-w-xl break-words text-[1.75rem] font-semibold leading-[1.05] tracking-[-0.045em] sm:mt-9 sm:text-5xl">
-                    Pocky ERP <span className="text-zinc-500">Workforce &amp; Contract Operations</span>
+                    Pocky ERP <span className="text-zinc-500">จัดการพนักงานและงานบริการ</span>
                   </h3>
                   <p className="mt-6 max-w-xl leading-7 text-zinc-400">
-                    A multi-role ERP platform for workforce service operations. It brings employee onboarding, attendance, replacement staffing, client contracts and payroll into one connected system—with focused workspaces for administrators, HR, finance teams and workers.
+                    โปรเจกต์นี้รวมงานที่ปกติกระจายอยู่หลายที่ ตั้งแต่ข้อมูลพนักงานกับเวลาเข้างาน
+                    ไปจนถึงสัญญาลูกค้าและเงินเดือน โดยมีหน้าทำงานแยกสำหรับผู้ดูแล ฝ่ายบุคคล
+                    ฝ่ายการเงิน และพนักงาน
                   </p>
 
                   <ul className="mt-7 space-y-3">
                     {[
-                      "Role-based workspaces with OTP-secured authentication",
-                      "Attendance, absence and replacement staffing workflows",
-                      "Contract, payroll and employee document management",
+                      "แต่ละบทบาทเห็นหน้าทำงานของตัวเอง และล็อกอินด้วย OTP",
+                      "บันทึกเวลา ลางาน และจัดคนมาทำงานแทน",
+                      "เก็บข้อมูลสัญญา เงินเดือน และเอกสารพนักงาน",
                     ].map((feature) => (
                       <li key={feature} className="flex items-start gap-3 text-sm leading-6 text-zinc-400">
                         <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-cyan-300/10 text-cyan-300"><Check className="size-3" /></span>
@@ -532,7 +525,7 @@ export default function Home() {
                     {erpStack.map((item) => <Badge key={item} variant="outline">{item}</Badge>)}
                   </div>
                   <div className="mt-7 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-500">
-                    <ShieldCheck className="size-4 text-cyan-300" /> Private operational system
+                    <ShieldCheck className="size-4 text-cyan-300" /> ระบบสำหรับใช้งานภายใน
                   </div>
                 </div>
               </div>
@@ -544,9 +537,9 @@ export default function Home() {
                     <div className="flex items-center justify-between gap-4">
                       <div className="flex items-center gap-3">
                         <span className="grid size-9 place-items-center rounded-lg bg-cyan-300/10"><Building2 className="size-4 text-cyan-300" /></span>
-                        <div><p className="text-xs font-medium text-zinc-300">Operations overview</p><p className="font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-600">pocky-erp / demo snapshot</p></div>
+                        <div><p className="text-xs font-medium text-zinc-300">ภาพรวม</p><p className="font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-600">pocky-erp / ตัวอย่าง</p></div>
                       </div>
-                      <span className="rounded-full bg-cyan-300/10 px-2.5 py-1 font-mono text-[9px] text-cyan-300">CONNECTED</span>
+                      <span className="rounded-full bg-cyan-300/10 px-2.5 py-1 font-mono text-[9px] text-cyan-300">พร้อมใช้งาน</span>
                     </div>
 
                     <div className="mt-7 grid gap-3 sm:grid-cols-2">
@@ -569,10 +562,10 @@ export default function Home() {
                   <div className="rounded-2xl border border-white/8 bg-black/20 p-5">
                     <div className="flex items-center gap-2">
                       <ScanLine className="size-4 text-cyan-300" />
-                      <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-500">Supporting workflows</p>
+                      <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-500">ฟังก์ชันอื่น ๆ</p>
                     </div>
                     <div className="mt-4 flex flex-wrap gap-2">
-                      {["Thai ID OCR", "Approval flow", "OTP sign-in", "PDF payslips"].map((item) => (
+                      {["อ่านบัตรประชาชนด้วย OCR", "ขั้นตอนอนุมัติ", "เข้าสู่ระบบด้วย OTP", "สลิปเงินเดือน PDF"].map((item) => (
                         <span key={item} className="flex items-center gap-1.5 rounded-full bg-white/[0.04] px-3 py-1.5 text-[10px] text-zinc-400"><Check className="size-3 text-cyan-300" />{item}</span>
                       ))}
                     </div>
@@ -593,12 +586,10 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
             <div>
               <h2 className="max-w-3xl text-3xl font-semibold tracking-[-0.05em] sm:text-6xl">
-                Have an idea worth building?
+                Interested in working together?
               </h2>
               <p className="mt-5 max-w-xl leading-7 text-zinc-400">
-                I&apos;m open to full-stack opportunities and thoughtful
-                collaborations. Let&apos;s turn the next idea into something
-                useful.
+                ถ้าสนใจงานที่ผมทำ หรือมีโปรเจกต์เว็บที่อยากคุยกัน ส่งอีเมลหรือทัก LINE มาได้เลยครับ
               </p>
             </div>
             <div className="grid gap-3">
@@ -610,7 +601,7 @@ export default function Home() {
                   <Mail className="size-5" />
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className="block text-xs text-zinc-400">Email</span>
+                  <span className="block text-xs text-zinc-400">อีเมล</span>
                   <span className="block break-all text-sm font-medium text-white sm:text-base">pgplagrob@gmail.com</span>
                 </span>
                 <ArrowUpRight className="hidden size-4 shrink-0 text-cyan-200 sm:block" />
@@ -622,7 +613,7 @@ export default function Home() {
       </section>
 
       <footer data-reveal className="relative mx-auto flex w-full max-w-7xl flex-col gap-3 px-5 py-8 text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
-        <p className="font-mono">Designed &amp; built with Next.js</p>
+        <p className="font-mono">ออกแบบและพัฒนาด้วย Next.js</p>
       </footer>
     </main>
   );

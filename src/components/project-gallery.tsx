@@ -13,42 +13,42 @@ const screens = [
     width: 1600,
     height: 1000,
     title: "อัปโหลดไฟล์",
-    eyebrow: "Step 01 / Upload",
+    eyebrow: "ขั้นที่ 01 / อัปโหลด",
   },
   {
     src: "/excel-gallery/02-file-selected.png",
     width: 1600,
     height: 1000,
     title: "เลือกไฟล์แล้ว",
-    eyebrow: "Step 02 / Selected",
+    eyebrow: "ขั้นที่ 02 / เลือกไฟล์",
   },
   {
     src: "/excel-gallery/03-review-overview.png",
     width: 1600,
     height: 1000,
     title: "ตรวจสอบภาพรวม",
-    eyebrow: "Step 03 / Review",
+    eyebrow: "ขั้นที่ 03 / ตรวจสอบ",
   },
   {
     src: "/excel-gallery/04-advanced-mapping.png",
     width: 1600,
     height: 1000,
-    title: "Advanced Mapping",
-    eyebrow: "Step 04 / Mapping",
+    title: "จับคู่คอลัมน์",
+    eyebrow: "ขั้นที่ 04 / จับคู่ข้อมูล",
   },
   {
     src: "/excel-gallery/05-download-ready.png",
     width: 1600,
     height: 1000,
     title: "ดาวน์โหลดไฟล์",
-    eyebrow: "Step 05 / Export",
+    eyebrow: "ขั้นที่ 05 / ส่งออก",
   },
   {
     src: "/excel-gallery/06-template-settings.png",
     width: 1600,
     height: 1000,
-    title: "ตั้งค่า Template",
-    eyebrow: "Settings / Template",
+    title: "ตั้งค่าเทมเพลต",
+    eyebrow: "ตั้งค่า / เทมเพลต",
   },
 ] as const;
 
@@ -91,13 +91,13 @@ export function ProjectGallery() {
         <div className="mb-5 flex min-w-0 flex-col items-start justify-between gap-4 sm:flex-row sm:items-end sm:gap-5">
           <div className="min-w-0">
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-300/70">
-              Real product preview
+              Excel Converter
             </p>
             <h4 className="mt-2 text-xl font-semibold tracking-[-0.03em] text-zinc-100 sm:text-2xl">
-              See the product in action
+              ลองดูหน้าจอของระบบ
             </h4>
             <p className="mt-2 text-sm text-zinc-500">
-              มือถือปัดทีละหน้าจอ ส่วนจอใหญ่แสดง 3 หน้าจอแรก—กดภาพเพื่อขยายได้
+              เลื่อนดูหน้าจออื่นได้ครับ แตะที่ภาพเพื่อดูขนาดใหญ่ขึ้น
             </p>
           </div>
 
@@ -170,8 +170,8 @@ export function ProjectGallery() {
         </div>
 
         <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-600">
-          <span>Swipe / scroll horizontally</span>
-          <span>06 screens</span>
+          <span>เลื่อนดูหน้าจอเพิ่มเติม</span>
+          <span>ทั้งหมด 6 หน้าจอ</span>
         </div>
       </section>
 
@@ -194,7 +194,7 @@ export function ProjectGallery() {
                       {activePreview.title}
                     </p>
                     <p className="font-mono text-[8px] uppercase tracking-[0.18em] text-zinc-600">
-                      Excel Converter / Preview
+                      Excel Converter / ตัวอย่าง
                     </p>
                   </div>
                   <Button

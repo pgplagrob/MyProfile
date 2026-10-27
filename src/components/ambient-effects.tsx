@@ -56,11 +56,11 @@ export function SiteIntro() {
     <div
       className={`site-intro ${leaving ? "site-intro--leaving" : ""}`}
       role="status"
-      aria-label="Opening Weraphat Pankab portfolio"
+      aria-label="กำลังเปิดเว็บไซต์ผลงานของ Weraphat Pankab"
     >
       <div className="intro-constellation" aria-hidden="true" />
       <div className="intro-content">
-        <p className="intro-kicker">INITIALIZING / PORTFOLIO</p>
+        <p className="intro-kicker">WERAPHAT PANKAB / PORTFOLIO</p>
         <div className="intro-signature" aria-label="Weraphat">
           <span>Weraphat</span><i>.</i>
         </div>
@@ -68,10 +68,10 @@ export function SiteIntro() {
           <path d="M5 19C104 6 178 24 272 14C371 3 447 22 615 8" />
         </svg>
         <div className="intro-progress" aria-hidden="true"><span /></div>
-        <p className="intro-meta">FULL-STACK SYSTEMS · BANGKOK</p>
+        <p className="intro-meta">FULL-STACK DEVELOPER · BANGKOK</p>
       </div>
       <button type="button" className="intro-skip" onClick={finish}>
-        Skip intro <span aria-hidden="true">↗</span>
+        ข้ามหน้าแนะนำ <span aria-hidden="true">↗</span>
       </button>
     </div>
   );
