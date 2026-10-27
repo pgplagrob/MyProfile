@@ -182,7 +182,7 @@ export default function Home() {
               className="h-full w-full object-cover object-[center_38%] saturate-[0.82] transition duration-1000 ease-out group-hover:scale-[1.025] group-hover:saturate-100"
             />
             <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(2,3,4,0.82),transparent_38%),linear-gradient(to_right,rgba(2,3,4,0.22),transparent_42%)]" />
-            <div className="absolute inset-x-0 top-0 flex items-center justify-between p-5 sm:p-6">
+            {/* <div className="absolute inset-x-0 top-0 flex items-center justify-between p-5 sm:p-6">
               <span className="rounded-full border border-white/12 bg-black/35 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.2em] text-zinc-300 backdrop-blur-md">
                 Weraphat / 2026
               </span>
@@ -190,7 +190,7 @@ export default function Home() {
                 <span className="size-1.5 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.9)]" />
                 นักพัฒนาเว็บ
               </span>
-            </div>
+            </div> */}
           </div>
 
           <Card className="absolute -bottom-10 left-3 right-3 overflow-hidden rounded-2xl border-white/12 bg-[#07100e]/92 shadow-[0_24px_60px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:-left-10 sm:right-auto sm:w-[21rem]">
