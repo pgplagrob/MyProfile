@@ -2,13 +2,19 @@ import {
   ArrowDownRight,
   ArrowUpRight,
   Braces,
+  Building2,
   Check,
+  Clock3,
   Code2,
   Database,
   FileSpreadsheet,
   Mail,
+  ScanLine,
   Server,
+  ShieldCheck,
   Sparkles,
+  UsersRound,
+  WalletCards,
 } from "lucide-react";
 
 import { CopyLineId } from "@/components/copy-line-id";
@@ -73,6 +79,45 @@ const projectStack = [
   "ExcelJS",
   "SheetJS",
   "openpyxl",
+];
+
+const erpStack = [
+  "Next.js 16",
+  "React 19",
+  "TypeScript",
+  "Bun",
+  "Elysia",
+  "Prisma",
+  "MySQL",
+  "Better Auth",
+  "Python OCR",
+];
+
+const erpModules = [
+  {
+    icon: UsersRound,
+    code: "PEOPLE",
+    title: "Employee operations",
+    description: "Profiles, onboarding and workforce records",
+  },
+  {
+    icon: Clock3,
+    code: "TIME",
+    title: "Attendance & coverage",
+    description: "Check-ins, absences and replacement staffing",
+  },
+  {
+    icon: Building2,
+    code: "CONTRACTS",
+    title: "Client contracts",
+    description: "Organizations, branches and agreement tracking",
+  },
+  {
+    icon: WalletCards,
+    code: "PAYROLL",
+    title: "Payroll workflows",
+    description: "Daily or monthly payroll and payslip output",
+  },
 ];
 
 export default function Home() {
@@ -181,8 +226,8 @@ export default function Home() {
               Currently featuring
             </p>
             <p className="mt-1 flex items-center gap-2 text-sm font-medium text-cyan-100">
-              <FileSpreadsheet className="size-4 text-cyan-300" />{" "}
-              excel-converter
+              <Braces className="size-4 text-cyan-300" />{" "}
+              two real-world systems
             </p>
           </div>
         </div>
@@ -295,11 +340,11 @@ export default function Home() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">
-                One focused product.
+                Systems built for real operations.
               </h2>
             </div>
             <Badge variant="outline" className="w-fit">
-              <Sparkles className="size-3 text-cyan-300" /> Featured project
+              <Sparkles className="size-3 text-cyan-300" /> Selected projects
             </Badge>
           </div>
 
@@ -449,6 +494,91 @@ export default function Home() {
                           <Check className="size-3 text-emerald-300" />
                           {item}
                         </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-6 overflow-hidden border-white/10 bg-[#0a0f12]">
+            <CardContent className="grid gap-0 p-0 lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="flex flex-col justify-between p-7 sm:p-10 lg:p-12">
+                <div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="grid size-11 place-items-center rounded-xl bg-cyan-300/10 text-cyan-300"><Building2 /></span>
+                    <Badge>Operations ERP</Badge>
+                    <Badge variant="outline">In development</Badge>
+                  </div>
+                  <h3 className="mt-9 max-w-xl text-3xl font-semibold tracking-[-0.045em] sm:text-5xl">
+                    Pocky ERP <span className="text-zinc-500">Workforce &amp; Contract Operations</span>
+                  </h3>
+                  <p className="mt-6 max-w-xl leading-7 text-zinc-400">
+                    A multi-role ERP platform for workforce service operations. It brings employee onboarding, attendance, replacement staffing, client contracts and payroll into one connected system—with focused workspaces for administrators, HR, finance teams and workers.
+                  </p>
+
+                  <ul className="mt-7 space-y-3">
+                    {[
+                      "Role-based workspaces with OTP-secured authentication",
+                      "Attendance, absence and replacement staffing workflows",
+                      "Contract, payroll and employee document management",
+                    ].map((feature) => (
+                      <li key={feature} className="flex items-start gap-3 text-sm leading-6 text-zinc-400">
+                        <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-cyan-300/10 text-cyan-300"><Check className="size-3" /></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-10">
+                  <div className="flex flex-wrap gap-2">
+                    {erpStack.map((item) => <Badge key={item} variant="outline">{item}</Badge>)}
+                  </div>
+                  <div className="mt-7 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-500">
+                    <ShieldCheck className="size-4 text-cyan-300" /> Private operational system
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative min-h-[32rem] overflow-hidden border-t border-white/8 bg-[#071014] p-5 sm:p-8 lg:min-h-[42rem] lg:border-l lg:border-t-0">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(34,211,238,0.17),transparent_34%)]" />
+                <div className="relative mx-auto flex h-full max-w-xl flex-col justify-center gap-4">
+                  <div className="rounded-2xl border border-white/10 bg-[#0b1418] p-5 shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:p-6">
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        <span className="grid size-9 place-items-center rounded-lg bg-cyan-300/10"><Building2 className="size-4 text-cyan-300" /></span>
+                        <div><p className="text-xs font-medium text-zinc-300">Operations overview</p><p className="font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-600">pocky-erp / demo snapshot</p></div>
+                      </div>
+                      <span className="rounded-full bg-cyan-300/10 px-2.5 py-1 font-mono text-[9px] text-cyan-300">CONNECTED</span>
+                    </div>
+
+                    <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                      {erpModules.map((module) => {
+                        const Icon = module.icon;
+                        return (
+                          <div key={module.code} className="rounded-xl border border-white/8 bg-black/20 p-4">
+                            <div className="flex items-center justify-between">
+                              <Icon className="size-4 text-cyan-300" />
+                              <span className="font-mono text-[8px] tracking-[0.16em] text-cyan-300/50">{module.code}</span>
+                            </div>
+                            <p className="mt-5 text-sm font-medium text-zinc-300">{module.title}</p>
+                            <p className="mt-1 text-[11px] leading-5 text-zinc-600">{module.description}</p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <div className="rounded-2xl border border-white/8 bg-black/20 p-5">
+                    <div className="flex items-center gap-2">
+                      <ScanLine className="size-4 text-cyan-300" />
+                      <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-500">Supporting workflows</p>
+                    </div>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {["Thai ID OCR", "Approval flow", "OTP sign-in", "PDF payslips"].map((item) => (
+                        <span key={item} className="flex items-center gap-1.5 rounded-full bg-white/[0.04] px-3 py-1.5 text-[10px] text-zinc-400"><Check className="size-3 text-cyan-300" />{item}</span>
                       ))}
                     </div>
                   </div>
