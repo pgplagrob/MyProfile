@@ -16,6 +16,7 @@ import {
   UsersRound,
   WalletCards,
 } from "lucide-react";
+import Image from "next/image";
 
 import { CopyLineId } from "@/components/copy-line-id";
 import { SiteHeader } from "@/components/site-header";
@@ -168,71 +169,54 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[34rem] lg:mx-0 lg:justify-self-end">
-          <div className="absolute -inset-8 rounded-full bg-cyan-300/5 blur-3xl" />
-          <Card className="relative overflow-hidden rounded-[2rem] border-white/10 bg-[#0a100e]/90 p-2 shadow-[0_40px_100px_rgba(0,0,0,0.5)] backdrop-blur-sm">
-            <div className="flex items-center justify-between border-b border-white/8 px-5 py-4">
+        <div className="group relative mx-auto mb-12 w-full max-w-[31rem] lg:mx-0 lg:mb-10 lg:justify-self-end">
+          <div className="absolute -inset-10 rounded-full bg-cyan-300/10 blur-3xl transition-opacity duration-700 group-hover:opacity-80" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 bg-[#080b0b] shadow-[0_45px_120px_rgba(0,0,0,0.58)]">
+            <Image
+              src="/weraphat-portrait.jpg"
+              alt="Portrait of Weraphat Pankab"
+              width={758}
+              height={1024}
+              priority
+              sizes="(max-width: 1024px) 92vw, 496px"
+              className="h-full w-full object-cover object-[center_38%] saturate-[0.82] transition duration-1000 ease-out group-hover:scale-[1.025] group-hover:saturate-100"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(2,3,4,0.82),transparent_38%),linear-gradient(to_right,rgba(2,3,4,0.22),transparent_42%)]" />
+            <div className="absolute inset-x-0 top-0 flex items-center justify-between p-5 sm:p-6">
+              <span className="rounded-full border border-white/12 bg-black/35 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.2em] text-zinc-300 backdrop-blur-md">
+                Weraphat / 2026
+              </span>
+              <span className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-cyan-100/70">
+                <span className="size-1.5 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.9)]" />
+                Full-stack
+              </span>
+            </div>
+          </div>
+
+          <Card className="absolute -bottom-10 left-3 right-3 overflow-hidden rounded-2xl border-white/12 bg-[#07100e]/92 shadow-[0_24px_60px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:-left-10 sm:right-auto sm:w-[21rem]">
+            <div className="flex items-center justify-between border-b border-white/8 px-4 py-3">
               <div className="flex gap-1.5" aria-hidden="true">
-                <span className="size-2.5 rounded-full bg-red-400/70" />
-                <span className="size-2.5 rounded-full bg-amber-300/70" />
-                <span className="size-2.5 rounded-full bg-emerald-300/70" />
+                <span className="size-2 rounded-full bg-red-400/70" />
+                <span className="size-2 rounded-full bg-amber-300/70" />
+                <span className="size-2 rounded-full bg-emerald-300/70" />
               </div>
-              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-600">
+              <span className="font-mono text-[8px] uppercase tracking-[0.22em] text-zinc-600">
                 developer.ts
               </span>
             </div>
-            <div className="space-y-5 p-5 font-mono text-[13px] leading-7 sm:p-8 sm:text-sm">
-              <p>
-                <span className="text-fuchsia-300">const</span>{" "}
-                <span className="text-cyan-200">developer</span>{" "}
-                <span className="text-zinc-500">=</span>{" "}
-                <span className="text-zinc-300">&#123;</span>
-              </p>
-              <div className="space-y-1 pl-5 sm:pl-8">
-                <p>
-                  <span className="text-zinc-500">name:</span>{" "}
-                  <span className="text-amber-200">
-                    &quot;Weraphat Pankab&quot;
-                  </span>
-                  ,
-                </p>
-                <p>
-                  <span className="text-zinc-500">role:</span>{" "}
-                  <span className="text-amber-200">
-                    &quot;Full-stack Developer&quot;
-                  </span>
-                  ,
-                </p>
-                <p>
-                  <span className="text-zinc-500">focus:</span>{" "}
-                  <span className="text-amber-200">
-                    &quot;Useful products&quot;
-                  </span>
-                  ,
-                </p>
-                <p>
-                  <span className="text-zinc-500">status:</span>{" "}
-                  <span className="text-emerald-300">&quot;Building&quot;</span>
-                  ,
-                </p>
+            <div className="grid grid-cols-[1fr_auto] items-end gap-4 px-4 py-3.5 font-mono text-[10px] leading-5 sm:text-[11px]">
+              <div>
+                <p><span className="text-fuchsia-300">const</span>{" "}<span className="text-cyan-200">developer</span>{" "}<span className="text-zinc-500">=</span>{" "}<span className="text-zinc-300">&#123;</span></p>
+                <p className="pl-4"><span className="text-zinc-500">role:</span>{" "}<span className="text-amber-200">&quot;Full-stack&quot;</span>,</p>
+                <p className="pl-4"><span className="text-zinc-500">status:</span>{" "}<span className="text-emerald-300">&quot;Building&quot;</span></p>
+                <p className="text-zinc-300">&#125;;</p>
               </div>
-              <p className="text-zinc-300">&#125;;</p>
-              <div className="flex items-center gap-2 border-t border-white/8 pt-5 text-zinc-500">
-                <span className="text-cyan-300">›</span>
-                <span>ship(idea)</span>
-                <span className="ml-1 inline-block h-4 w-1.5 animate-pulse bg-cyan-300" />
+              <div className="mb-1 flex items-center gap-1.5 text-zinc-500">
+                <Braces className="size-3.5 text-cyan-300" />
+                <span className="whitespace-nowrap">2 systems</span>
               </div>
             </div>
           </Card>
-          <div className="absolute -bottom-5 left-0 rounded-2xl border border-cyan-300/20 bg-[#0c1512] px-4 py-3 shadow-xl sm:-left-8">
-            <p className="font-serif text-[10px] uppercase tracking-[0.2em] text-zinc-500">
-              Currently featuring
-            </p>
-            <p className="mt-1 flex items-center gap-2 text-sm font-medium text-cyan-100">
-              <Braces className="size-4 text-cyan-300" />{" "}
-              two real-world systems
-            </p>
-          </div>
         </div>
       </section>
 
