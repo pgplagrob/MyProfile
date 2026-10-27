@@ -19,6 +19,7 @@ import {
 import Image from "next/image";
 
 import { CopyLineId } from "@/components/copy-line-id";
+import { ProjectGallery } from "@/components/project-gallery";
 import { SiteHeader } from "@/components/site-header";
 import { AmbientEffects, SiteIntro } from "@/components/ambient-effects";
 import { Badge } from "@/components/ui/badge";
@@ -488,6 +489,10 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+              </div>
+
+              <div className="lg:col-span-2">
+                <ProjectGallery />
               </div>
             </CardContent>
           </Card>
