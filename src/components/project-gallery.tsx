@@ -9,25 +9,46 @@ import { Button } from "@/components/ui/button";
 
 const screens = [
   {
-    src: "/excel-gallery/01-screen.png",
-    width: 3248,
-    height: 320,
-    title: "ครุภัณฑ์สำนักงาน",
-    eyebrow: "Worksheet 01",
+    src: "/excel-gallery/01-upload-empty.png",
+    width: 1600,
+    height: 1000,
+    title: "อัปโหลดไฟล์",
+    eyebrow: "Step 01 / Upload",
   },
   {
-    src: "/excel-gallery/02-screen.png",
-    width: 2864,
-    height: 280,
-    title: "อุปกรณ์ไอที",
-    eyebrow: "Worksheet 02",
+    src: "/excel-gallery/02-file-selected.png",
+    width: 1600,
+    height: 1000,
+    title: "เลือกไฟล์แล้ว",
+    eyebrow: "Step 02 / Selected",
   },
   {
-    src: "/excel-gallery/03-screen.png",
-    width: 1136,
-    height: 240,
-    title: "สรุปข้อมูล",
-    eyebrow: "Worksheet 03",
+    src: "/excel-gallery/03-review-overview.png",
+    width: 1600,
+    height: 1000,
+    title: "ตรวจสอบภาพรวม",
+    eyebrow: "Step 03 / Review",
+  },
+  {
+    src: "/excel-gallery/04-advanced-mapping.png",
+    width: 1600,
+    height: 1000,
+    title: "Advanced Mapping",
+    eyebrow: "Step 04 / Mapping",
+  },
+  {
+    src: "/excel-gallery/05-download-ready.png",
+    width: 1600,
+    height: 1000,
+    title: "ดาวน์โหลดไฟล์",
+    eyebrow: "Step 05 / Export",
+  },
+  {
+    src: "/excel-gallery/06-template-settings.png",
+    width: 1600,
+    height: 1000,
+    title: "ตั้งค่า Template",
+    eyebrow: "Settings / Template",
   },
 ] as const;
 
@@ -64,13 +85,13 @@ export function ProjectGallery() {
         <div className="mb-5 flex items-end justify-between gap-5">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-300/70">
-              Real workbook preview
+              Real product preview
             </p>
             <h4 className="mt-2 text-xl font-semibold tracking-[-0.03em] text-zinc-100 sm:text-2xl">
-              Explore the first 3 worksheets
+              See the product in action
             </h4>
             <p className="mt-2 text-sm text-zinc-500">
-              เลื่อนเพื่อดูตัวอย่างข้อมูลแต่ละหน้า หรือกดที่ภาพเพื่อขยาย
+              จอใหญ่แสดง 3 หน้าจอแรก เลื่อนต่อเพื่อดู workflow ทั้งหมด หรือกดภาพเพื่อขยาย
             </p>
           </div>
 
@@ -104,7 +125,7 @@ export function ProjectGallery() {
           {screens.map((screen) => (
             <article
               key={screen.src}
-              className="group min-w-[88%] snap-start overflow-hidden rounded-2xl border border-white/10 bg-[#09110e] sm:min-w-[72%] lg:min-w-[58%]"
+              className="group min-w-[88%] snap-start overflow-hidden rounded-2xl border border-white/10 bg-[#09110e] sm:min-w-[62%] lg:min-w-[31.5%]"
             >
               <div className="flex items-center justify-between border-b border-white/8 px-4 py-3">
                 <div className="flex items-center gap-2.5">
@@ -132,7 +153,7 @@ export function ProjectGallery() {
                   alt={`ตัวอย่างข้อมูลหน้า ${screen.title} ในระบบ Excel Converter`}
                   width={screen.width}
                   height={screen.height}
-                  sizes="(max-width: 640px) 88vw, (max-width: 1024px) 72vw, 58vw"
+                  sizes="(max-width: 640px) 88vw, (max-width: 1024px) 62vw, 30vw"
                   className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.01]"
                 />
               </button>
@@ -142,7 +163,7 @@ export function ProjectGallery() {
 
         <div className="mt-2 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-600">
           <span>Swipe / scroll horizontally</span>
-          <span>03 screens</span>
+          <span>06 screens</span>
         </div>
       </section>
 
@@ -185,7 +206,7 @@ export function ProjectGallery() {
                     width={activePreview.width}
                     height={activePreview.height}
                     sizes="96vw"
-                    className="h-auto min-w-[52rem] max-w-none sm:min-w-full"
+                    className="h-auto w-full"
                   />
                 </div>
               </div>
