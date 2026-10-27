@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type Star = {
   x: number;
@@ -11,6 +11,71 @@ type Star = {
   phase: number;
   cool: boolean;
 };
+
+export function SiteIntro() {
+  const [visible, setVisible] = useState(true);
+  const [leaving, setLeaving] = useState(false);
+
+  const finish = useCallback(() => {
+    setLeaving(true);
+    window.setTimeout(() => setVisible(false), 620);
+  }, []);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches) {
+      const frame = window.requestAnimationFrame(() => setVisible(false));
+      return () => window.cancelAnimationFrame(frame);
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const exitTimer = window.setTimeout(finish, 2400);
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape" || event.key === "Enter" || event.key === " ") {
+        finish();
+      }
+    }
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.clearTimeout(exitTimer);
+      window.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [finish]);
+
+  useEffect(() => {
+    if (!visible) document.body.style.overflow = "";
+  }, [visible]);
+
+  if (!visible) return null;
+
+  return (
+    <div
+      className={`site-intro ${leaving ? "site-intro--leaving" : ""}`}
+      role="status"
+      aria-label="Opening Weraphat Pankab portfolio"
+    >
+      <div className="intro-constellation" aria-hidden="true" />
+      <div className="intro-content">
+        <p className="intro-kicker">INITIALIZING / PORTFOLIO</p>
+        <div className="intro-signature" aria-label="Weraphat">
+          <span>Weraphat</span><i>.</i>
+        </div>
+        <svg className="intro-stroke" viewBox="0 0 620 28" aria-hidden="true">
+          <path d="M5 19C104 6 178 24 272 14C371 3 447 22 615 8" />
+        </svg>
+        <div className="intro-progress" aria-hidden="true"><span /></div>
+        <p className="intro-meta">FULL-STACK SYSTEMS · BANGKOK</p>
+      </div>
+      <button type="button" className="intro-skip" onClick={finish}>
+        Skip intro <span aria-hidden="true">↗</span>
+      </button>
+    </div>
+  );
+}
 
 export function AmbientEffects() {
   const canvasRef = useRef<HTMLCanvasElement>(null);

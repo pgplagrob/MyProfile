@@ -19,7 +19,7 @@ import {
 
 import { CopyLineId } from "@/components/copy-line-id";
 import { SiteHeader } from "@/components/site-header";
-import { AmbientEffects } from "@/components/ambient-effects";
+import { AmbientEffects, SiteIntro } from "@/components/ambient-effects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -124,6 +124,7 @@ const erpModules = [
 export default function Home() {
   return (
     <main id="top" className="relative isolate overflow-hidden bg-[#020304] text-white">
+      <SiteIntro />
       <AmbientEffects />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[52rem] bg-[radial-gradient(circle_at_72%_16%,rgba(34,211,238,0.13),transparent_30%),radial-gradient(circle_at_18%_5%,rgba(45,212,191,0.07),transparent_24%)]" />
       <div className="bg-grid pointer-events-none absolute inset-x-0 top-0 h-[52rem] opacity-30 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
