@@ -19,6 +19,7 @@ import {
 
 import { CopyLineId } from "@/components/copy-line-id";
 import { SiteHeader } from "@/components/site-header";
+import { AmbientEffects } from "@/components/ambient-effects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -122,13 +123,14 @@ const erpModules = [
 
 export default function Home() {
   return (
-    <main id="top" className="relative overflow-hidden bg-[#050807] text-white">
+    <main id="top" className="relative isolate overflow-hidden bg-[#020304] text-white">
+      <AmbientEffects />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[52rem] bg-[radial-gradient(circle_at_72%_16%,rgba(34,211,238,0.13),transparent_30%),radial-gradient(circle_at_18%_5%,rgba(45,212,191,0.07),transparent_24%)]" />
       <div className="bg-grid pointer-events-none absolute inset-x-0 top-0 h-[52rem] opacity-30 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
 
       <SiteHeader />
 
-      <section className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 pb-20 pt-12 sm:px-8 lg:min-h-[calc(100svh-88px)] lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 lg:px-10 lg:pb-28 lg:pt-8">
+      <section data-reveal className="relative mx-auto grid w-full max-w-7xl items-center gap-12 px-5 pb-20 pt-12 sm:px-8 lg:min-h-[calc(100svh-88px)] lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 lg:px-10 lg:pb-28 lg:pt-8">
         <div className="max-w-3xl">
           <div className="mb-3 flex items-center gap-3 sm:mb-7">
             {/* <span className="relative flex size-2.5">
@@ -245,6 +247,7 @@ export default function Home() {
       </section> */}
 
       <section
+        data-reveal
         id="about"
         className="scroll-mt-20 px-5 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-32"
       >
@@ -293,8 +296,9 @@ export default function Home() {
       </section>
 
       <section
+        data-reveal
         id="stack"
-        className="scroll-mt-20 border-y border-white/8 bg-[#080d0b] px-5 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-32"
+        className="relative scroll-mt-20 border-y border-white/8 bg-black/20 px-5 py-16 backdrop-blur-[1px] sm:px-8 sm:py-24 lg:px-10 lg:py-32"
       >
         <div className="mx-auto w-full max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-end">
@@ -333,6 +337,7 @@ export default function Home() {
       </section>
 
       <section
+        data-reveal
         id="work"
         className="scroll-mt-20 px-5 py-16 sm:px-8 sm:py-24 lg:px-10 lg:py-32"
       >
@@ -590,6 +595,7 @@ export default function Home() {
       </section>
 
       <section
+        data-reveal
         id="contact"
         className="scroll-mt-20 px-5 pb-8 pt-12 sm:px-8 lg:px-10"
       >
@@ -625,7 +631,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="mx-auto flex w-full max-w-7xl flex-col gap-3 px-5 py-8 text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
+      <footer data-reveal className="relative mx-auto flex w-full max-w-7xl flex-col gap-3 px-5 py-8 text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
         <p className="font-mono">Designed &amp; built with Next.js</p>
       </footer>
     </main>

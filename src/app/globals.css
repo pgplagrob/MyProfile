@@ -27,6 +27,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -39,6 +40,46 @@ body {
     linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px);
   background-size: 52px 52px;
+}
+
+.cosmic-canvas {
+  opacity: 0;
+  animation: cosmic-fade-in 1.8s ease-out forwards;
+}
+
+.cosmic-nebula {
+  background:
+    radial-gradient(circle at 72% 14%, rgb(34 211 238 / 0.11), transparent 28%),
+    radial-gradient(circle at 18% 34%, rgb(99 102 241 / 0.08), transparent 27%),
+    radial-gradient(circle at 58% 78%, rgb(20 184 166 / 0.07), transparent 30%);
+  filter: blur(8px);
+}
+
+.cosmic-vignette {
+  background:
+    linear-gradient(to bottom, rgb(2 3 4 / 0.12), transparent 15%, transparent 82%, rgb(2 3 4 / 0.72)),
+    radial-gradient(ellipse at center, transparent 35%, rgb(2 3 4 / 0.48) 100%);
+}
+
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  filter: blur(7px);
+  transform: translateY(34px) scale(0.992);
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-ready [data-reveal].is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+
+@keyframes cosmic-fade-in {
+  to { opacity: 1; }
 }
 
 .section-label {
@@ -66,5 +107,11 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
   }
 }
