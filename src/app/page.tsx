@@ -7,6 +7,8 @@ import {
   Clock3,
   Code2,
   Database,
+  Download,
+  FileText,
   FileSpreadsheet,
   Mail,
   ScanLine,
@@ -125,10 +127,10 @@ const erpModules = [
 
 export default function Home() {
   return (
-    <main id="top" className="relative isolate overflow-hidden bg-[#020304] text-white">
+    <main id="top" className="relative isolate overflow-hidden bg-[#050505] text-white">
       <SiteIntro />
       <AmbientEffects />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[52rem] bg-[radial-gradient(circle_at_72%_16%,rgba(34,211,238,0.13),transparent_30%),radial-gradient(circle_at_18%_5%,rgba(45,212,191,0.07),transparent_24%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[52rem] bg-[radial-gradient(circle_at_72%_16%,rgba(255,255,255,0.07),transparent_30%),radial-gradient(circle_at_18%_5%,rgba(161,161,170,0.045),transparent_24%)]" />
       <div className="bg-grid pointer-events-none absolute inset-x-0 top-0 h-[52rem] opacity-30 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
 
       <SiteHeader />
@@ -137,15 +139,15 @@ export default function Home() {
         <div className="max-w-3xl">
           <div className="mb-3 flex items-center gap-3 sm:mb-7">
             {/* <span className="relative flex size-2.5">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-cyan-300 opacity-60" />
-              <span className="relative inline-flex size-2.5 rounded-full bg-cyan-300" />
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-white opacity-60" />
+              <span className="relative inline-flex size-2.5 rounded-full bg-white" />
             </span> */}
             {/* <span className="font-mono text-xs uppercase tracking-[0.24em] text-zinc-400">
               พร้อมรับฟังโอกาสและโปรเจกต์ที่น่าสนใจ
             </span> */}
           </div>
 
-          <p className="mb-3 font-serif text-sm text-cyan-200 sm:text-base">
+          <p className="mb-3 font-serif text-sm text-zinc-200 sm:text-base">
           </p>
           <h1 className="max-w-4xl text-balance text-[clamp(3rem,8vw,7.8rem)] font-semibold leading-[0.92] tracking-normal sm:leading-[0.88]">
             Full-stack
@@ -169,8 +171,8 @@ export default function Home() {
         </div>
 
         <div className="group relative mx-auto mb-12 w-full max-w-[31rem] lg:mx-0 lg:mb-10 lg:justify-self-end">
-          <div className="absolute -inset-10 rounded-full bg-cyan-300/10 blur-3xl transition-opacity duration-700 group-hover:opacity-80" />
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 bg-[#080b0b] shadow-[0_45px_120px_rgba(0,0,0,0.58)]">
+          <div className="absolute -inset-10 rounded-full bg-white/[0.045] blur-3xl transition-opacity duration-700 group-hover:opacity-80" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 bg-[#080808] shadow-[0_45px_120px_rgba(0,0,0,0.58)]">
             <Image
               src="/weraphat-portrait.jpg"
               alt="ภาพถ่ายของ Weraphat Pankab"
@@ -185,36 +187,38 @@ export default function Home() {
               <span className="rounded-full border border-white/12 bg-black/35 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.2em] text-zinc-300 backdrop-blur-md">
                 Weraphat / 2026
               </span>
-              <span className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-cyan-100/70">
-                <span className="size-1.5 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.9)]" />
+              <span className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-zinc-300/70">
+                <span className="size-1.5 rounded-full bg-white shadow-[0_0_12px_rgba(255,255,255,0.5)]" />
                 นักพัฒนาเว็บ
               </span>
             </div> */}
           </div>
 
-          <Card className="absolute -bottom-10 left-3 right-3 overflow-hidden rounded-2xl border-white/12 bg-[#07100e]/92 shadow-[0_24px_60px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:-left-10 sm:right-auto sm:w-[21rem]">
-            <div className="flex items-center justify-between border-b border-white/8 px-4 py-3">
-              <div className="flex gap-1.5" aria-hidden="true">
-                <span className="size-2 rounded-full bg-red-400/70" />
-                <span className="size-2 rounded-full bg-amber-300/70" />
-                <span className="size-2 rounded-full bg-emerald-300/70" />
-              </div>
-              <span className="font-mono text-[8px] uppercase tracking-[0.22em] text-zinc-600">
-                developer.ts
+          <Card className="absolute -bottom-10 left-3 right-3 overflow-hidden rounded-2xl border-white/15 bg-[#0a0a0a]/94 shadow-[0_24px_60px_rgba(0,0,0,0.68)] backdrop-blur-xl sm:-left-10 sm:right-auto sm:w-[22rem]">
+            <a
+              href="/Weraphat-Pankab-CV.pdf"
+              download="Weraphat-Pankab-CV.pdf"
+              className="group/cv flex items-center gap-4 p-4 outline-none transition-colors hover:bg-white/[0.055] focus-visible:bg-white/[0.055]"
+              aria-label="ดาวน์โหลด CV ของ Weraphat Pankab เป็นไฟล์ PDF"
+            >
+              <span className="grid size-12 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.055] text-zinc-100">
+                <FileText className="size-5" />
               </span>
-            </div>
-            <div className="grid grid-cols-[1fr_auto] items-end gap-4 px-4 py-3.5 font-mono text-[10px] leading-5 sm:text-[11px]">
-              <div>
-                <p><span className="text-fuchsia-300">const</span>{" "}<span className="text-cyan-200">developer</span>{" "}<span className="text-zinc-500">=</span>{" "}<span className="text-zinc-300">&#123;</span></p>
-                <p className="pl-4"><span className="text-zinc-500">role:</span>{" "}<span className="text-amber-200">&quot;Full-stack&quot;</span>,</p>
-                <p className="pl-4"><span className="text-zinc-500">status:</span>{" "}<span className="text-emerald-300">&quot;Building&quot;</span></p>
-                <p className="text-zinc-300">&#125;;</p>
-              </div>
-              <div className="mb-1 flex items-center gap-1.5 text-zinc-500">
-                <Braces className="size-3.5 text-cyan-300" />
-                <span className="whitespace-nowrap">2 โปรเจกต์</span>
-              </div>
-            </div>
+              <span className="min-w-0 flex-1">
+                <span className="block font-mono text-[9px] uppercase tracking-[0.2em] text-zinc-500">
+                  Curriculum Vitae
+                </span>
+                <span className="mt-1 block text-sm font-semibold text-white">
+                  Weraphat Pankab
+                </span>
+                <span className="mt-0.5 block text-xs text-zinc-500">
+                  PDF · ดาวน์โหลด CV
+                </span>
+              </span>
+              <span className="grid size-10 shrink-0 place-items-center rounded-full border border-white/15 text-zinc-300 transition-all group-hover/cv:border-white/35 group-hover/cv:bg-white group-hover/cv:text-black">
+                <Download className="size-4" />
+              </span>
+            </a>
           </Card>
         </div>
       </section>
@@ -224,7 +228,7 @@ export default function Home() {
           {stack.map((item, index) => (
             <div key={item} className="flex items-center gap-7">
               <span className="font-mono text-xs uppercase tracking-[0.18em] text-zinc-500">{item}</span>
-              {index < stack.length - 1 ? <span className="hidden size-1 rounded-full bg-cyan-300/50 sm:block" /> : null}
+              {index < stack.length - 1 ? <span className="hidden size-1 rounded-full bg-white/50 sm:block" /> : null}
             </div>
           ))}
         </div>
@@ -237,7 +241,7 @@ export default function Home() {
       >
         <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <div>
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-cyan-300/80">
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-zinc-400">
               About
             </p>
             <h2 className="text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">
@@ -260,10 +264,10 @@ export default function Home() {
                 return (
                   <Card
                     key={capability.title}
-                    className="group rounded-2xl bg-white/[0.02] p-4 shadow-none transition-colors hover:border-cyan-300/25 hover:bg-cyan-300/[0.035] sm:p-5"
+                    className="group rounded-2xl bg-white/[0.02] p-4 shadow-none transition-colors hover:border-white/25 hover:bg-white/[0.05] sm:p-5"
                   >
                     <div className="flex items-center justify-between">
-                      <Icon className="size-5 text-cyan-300" />
+                      <Icon className="size-5 text-zinc-300" />
                       <span className="font-mono text-[10px] text-zinc-600">
                         {capability.number}
                       </span>
@@ -289,7 +293,7 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-2 lg:items-end">
             <div>
               <h2 className="text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">
-                Teach Stack
+                Tech Stack
               </h2>
             </div>
             {/* <p className="max-w-xl leading-7 text-zinc-500 lg:justify-self-end">
@@ -301,18 +305,18 @@ export default function Home() {
             {stack.map((item, index) => (
               <div
                 key={item}
-                className="group flex min-h-20 flex-col justify-between rounded-2xl border border-white/8 bg-white/[0.025] p-4 transition-all hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-cyan-300/[0.045] sm:min-h-28 sm:p-5"
+                className="group flex min-h-20 flex-col justify-between rounded-2xl border border-white/8 bg-white/[0.025] p-4 transition-all hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.055] sm:min-h-28 sm:p-5"
               >
                 <span className="font-mono text-[10px] text-zinc-600">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="text-sm font-medium text-zinc-300 transition-colors group-hover:text-cyan-100 sm:text-base">
+                <span className="text-sm font-medium text-zinc-300 transition-colors group-hover:text-white sm:text-base">
                   {item}
                 </span>
               </div>
             ))}
-            <div className="hidden min-h-28 items-end rounded-2xl border border-dashed border-cyan-300/20 p-5 lg:flex">
-              <span className="font-mono text-xs text-cyan-300/60">
+            <div className="hidden min-h-28 items-end rounded-2xl border border-dashed border-white/15 p-5 lg:flex">
+              <span className="font-mono text-xs text-zinc-500">
                 ยังมีอีกหลายอย่างให้ลอง +
               </span>
             </div>
@@ -333,16 +337,16 @@ export default function Home() {
               </h2>
             </div>
             <Badge variant="outline" className="w-fit">
-              <Sparkles className="size-3 text-cyan-300" /> ดูรายละเอียด
+              <Sparkles className="size-3 text-zinc-300" /> ดูรายละเอียด
             </Badge>
           </div>
 
-          <Card className="mt-8 overflow-hidden border-white/10 bg-[#0a100e] sm:mt-12">
+          <Card className="mt-8 overflow-hidden border-white/10 bg-[#0b0b0b] sm:mt-12">
             <CardContent className="grid min-w-0 gap-0 p-0 lg:grid-cols-[0.95fr_1.05fr]">
               <div className="flex min-w-0 flex-col justify-between p-5 sm:p-10 lg:p-12">
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="grid size-11 place-items-center rounded-xl bg-emerald-300/10 text-emerald-300">
+                    <span className="grid size-11 place-items-center rounded-xl bg-white/[0.07] text-zinc-200">
                       <FileSpreadsheet />
                     </span>
                     <Badge>เครื่องมือจัดการไฟล์</Badge>
@@ -369,7 +373,7 @@ export default function Home() {
                         key={feature}
                         className="flex items-start gap-3 text-sm leading-6 text-zinc-400"
                       >
-                        <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-emerald-300/10 text-emerald-300">
+                        <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-white/[0.07] text-zinc-300">
                           <Check className="size-3" />
                         </span>
                         {feature}
@@ -398,14 +402,14 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="relative min-w-0 overflow-hidden border-t border-white/8 bg-[#07110d] p-4 sm:p-8 lg:min-h-[42rem] lg:border-l lg:border-t-0">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(52,211,153,0.16),transparent_34%)]" />
+              <div className="relative min-w-0 overflow-hidden border-t border-white/8 bg-[#080808] p-4 sm:p-8 lg:min-h-[42rem] lg:border-l lg:border-t-0">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_25%,rgba(255,255,255,0.075),transparent_34%)]" />
                 <div className="relative mx-auto flex h-full min-w-0 max-w-xl flex-col justify-center gap-4">
-                  <div className="min-w-0 rounded-2xl border border-white/10 bg-[#0d1512] p-4 shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:p-6">
+                  <div className="min-w-0 rounded-2xl border border-white/10 bg-[#111111] p-4 shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:p-6">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="grid size-8 place-items-center rounded-lg bg-emerald-300/10">
-                          <FileSpreadsheet className="size-4 text-emerald-300" />
+                        <span className="grid size-8 place-items-center rounded-lg bg-white/[0.07]">
+                          <FileSpreadsheet className="size-4 text-zinc-300" />
                         </span>
                         <div>
                           <p className="text-xs font-medium text-zinc-300">
@@ -416,7 +420,7 @@ export default function Home() {
                           </p>
                         </div>
                       </div>
-                      <span className="rounded-full bg-emerald-300/10 px-2.5 py-1 font-mono text-[9px] text-emerald-300">
+                      <span className="rounded-full bg-white/[0.07] px-2.5 py-1 font-mono text-[9px] text-zinc-300">
                         ตรวจสอบแล้ว
                       </span>
                     </div>
@@ -427,14 +431,14 @@ export default function Home() {
                           key={step}
                           className="relative rounded-xl border border-white/8 bg-black/20 p-3.5"
                         >
-                          <p className="font-mono text-[9px] text-emerald-300/60">
+                          <p className="font-mono text-[9px] text-zinc-500">
                             0{index + 1}
                           </p>
                           <p className="mt-3 text-xs font-medium text-zinc-300">
                             {step}
                           </p>
                           {index < projectPipeline.length - 1 ? (
-                            <span className="absolute -right-1.5 top-1/2 hidden size-3 -translate-y-1/2 rotate-45 border-r border-t border-emerald-300/30 bg-[#0d1512] sm:block" />
+                            <span className="absolute -right-1.5 top-1/2 hidden size-3 -translate-y-1/2 rotate-45 border-r border-t border-white/20 bg-[#111111] sm:block" />
                           ) : null}
                         </div>
                       ))}
@@ -451,7 +455,7 @@ export default function Home() {
                         key={label}
                         className="min-w-0 rounded-xl border border-white/8 bg-white/[0.025] p-3 sm:rounded-2xl sm:p-5"
                       >
-                        <p className="text-2xl font-semibold text-emerald-200 sm:text-3xl">
+                        <p className="text-2xl font-semibold text-zinc-200 sm:text-3xl">
                           {value}
                         </p>
                         <p className="mt-2 text-[10px] leading-4 text-zinc-500 sm:text-xs">
@@ -477,7 +481,7 @@ export default function Home() {
                           key={item}
                           className="flex items-center gap-1.5 rounded-full bg-white/[0.04] px-3 py-1.5 text-[10px] text-zinc-400"
                         >
-                          <Check className="size-3 text-emerald-300" />
+                          <Check className="size-3 text-zinc-300" />
                           {item}
                         </span>
                       ))}
@@ -497,7 +501,7 @@ export default function Home() {
               <div className="flex min-w-0 flex-col justify-between p-5 sm:p-10 lg:p-12">
                 <div>
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="grid size-11 place-items-center rounded-xl bg-cyan-300/10 text-cyan-300"><Building2 /></span>
+                    <span className="grid size-11 place-items-center rounded-xl bg-white/[0.07] text-zinc-300"><Building2 /></span>
                     <Badge>ระบบจัดการงานและพนักงาน</Badge>
                     <Badge variant="outline">กำลังทำอยู่</Badge>
                   </div>
@@ -517,7 +521,7 @@ export default function Home() {
                       "เก็บข้อมูลสัญญา เงินเดือน และเอกสารพนักงาน",
                     ].map((feature) => (
                       <li key={feature} className="flex items-start gap-3 text-sm leading-6 text-zinc-400">
-                        <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-cyan-300/10 text-cyan-300"><Check className="size-3" /></span>
+                        <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-white/[0.07] text-zinc-300"><Check className="size-3" /></span>
                         {feature}
                       </li>
                     ))}
@@ -534,7 +538,7 @@ export default function Home() {
         id="contact"
         className="scroll-mt-20 px-5 pb-8 pt-12 sm:px-8 lg:px-10"
       >
-        <div className="mx-auto w-full max-w-7xl overflow-hidden rounded-[2rem] border border-cyan-300/15 bg-cyan-300/[0.055] px-5 py-10 sm:px-12 sm:py-16 lg:px-16">
+        <div className="mx-auto w-full max-w-7xl overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.035] px-5 py-10 sm:px-12 sm:py-16 lg:px-16">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
             <div>
               <h2 className="max-w-3xl text-3xl font-semibold tracking-[-0.05em] sm:text-6xl">
@@ -547,16 +551,16 @@ export default function Home() {
             <div className="grid gap-3">
               <a
                 href="mailto:pgplagrob@gmail.com"
-                className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-[#0a100e]/70 p-4 transition-colors hover:border-cyan-300/40 hover:bg-cyan-300/[0.06] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 sm:gap-4 sm:p-5"
+                className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-black/35 p-4 transition-colors hover:border-white/30 hover:bg-white/[0.06] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:gap-4 sm:p-5"
               >
-                <span className="hidden size-11 shrink-0 place-items-center rounded-xl bg-cyan-300/10 text-cyan-200 min-[360px]:grid">
+                <span className="hidden size-11 shrink-0 place-items-center rounded-xl bg-white/[0.07] text-zinc-200 min-[360px]:grid">
                   <Mail className="size-5" />
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-xs text-zinc-400">อีเมล</span>
                   <span className="block break-all text-sm font-medium text-white sm:text-base">pgplagrob@gmail.com</span>
                 </span>
-                <ArrowUpRight className="hidden size-4 shrink-0 text-cyan-200 sm:block" />
+                <ArrowUpRight className="hidden size-4 shrink-0 text-zinc-300 sm:block" />
               </a>
               <CopyLineId />
             </div>

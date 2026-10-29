@@ -140,7 +140,7 @@ export function AmbientEffects() {
 
         painter.beginPath();
         painter.fillStyle = star.cool
-          ? `rgba(103, 232, 249, ${star.opacity * twinkle})`
+          ? `rgba(212, 212, 216, ${star.opacity * twinkle})`
           : `rgba(255, 255, 255, ${star.opacity * twinkle})`;
         painter.arc(x, y, star.radius, 0, Math.PI * 2);
         painter.fill();

@@ -36,12 +36,12 @@ export function SiteHeader() {
       </Button>
 
       {open ? (
-        <div className="absolute left-5 right-5 top-[5.5rem] rounded-2xl border border-white/10 bg-[#090e0c]/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
+        <div className="absolute left-5 right-5 top-[5.5rem] rounded-2xl border border-white/10 bg-[#0a0a0a]/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
           <nav aria-label="เมนูสำหรับมือถือ" className="flex flex-col">
             {links.map((link) => (
               <a key={link.href} href={link.href} onClick={() => setOpen(false)} className="rounded-xl px-4 py-3 text-sm text-zinc-300 transition-colors hover:bg-white/5 hover:text-white">{link.label}</a>
             ))}
-            <a href="#contact" onClick={() => setOpen(false)} className="mt-2 rounded-xl bg-cyan-300 px-4 py-3 text-center text-sm font-semibold text-[#06100d]">ติดต่อ</a>
+            <a href="#contact" onClick={() => setOpen(false)} className="mt-2 rounded-xl bg-white px-4 py-3 text-center text-sm font-semibold text-black">ติดต่อ</a>
           </nav>
         </div>
       ) : null}
