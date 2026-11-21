@@ -56,5 +56,3 @@ Then open [http://localhost:3000](http://localhost:3000).
 ## Connect with me
 
 You can find more of my work on [GitHub](https://github.com/pgplagrob).
-
-I'm open to full-stack opportunities and thoughtful collaborations. Let's build something useful together.
